@@ -21,14 +21,14 @@ const Sidebar = ({activarModal}) => {
     }
 
   return (
-    <div className='bg-indigo-700 h-screen overflow-hidden transition-all duration-500' style={activarModal ? estilos.enabled : estilos.disabled}>
+    <div className='flex flex-col bg-indigo-600 h-screen overflow-hidden transition-all duration-500' style={activarModal ? estilos.enabled : estilos.disabled}>
       {
         opcionesSidebar.map((opcion, index) => ( // opcion es la variable para iterar e index es la variable para identificar cada componente iterado
           <SidebarOption key={index} icon={opcion.icon}> {opcion.text} </SidebarOption>
         ))
       }
 
-      <div className='flex flex-col h-full'>
+      <div className='flex flex-col h-full justify-end'>
       <SidebarOption icon='person-fill'>Usuario</SidebarOption>
       <SidebarOption icon='gear'>Configuracion</SidebarOption>
 

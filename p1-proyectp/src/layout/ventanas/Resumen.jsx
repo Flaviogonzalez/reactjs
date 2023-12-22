@@ -1,21 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ResumenTotal from './Resumen/ResumenTotal'
 
 const Resumen = () => {
-
-  const total = [
-    {titulo: 'Invertido', dato: ''},
-    {titulo: 'Retorno/Diferencia', dato: ''},
-    {titulo: 'Total', dato: ''},
-  ]
+  const [porcentaje, setPorcentaje] = useState(88);
+  const [invertido, setInvertido] = useState(0);
+  const [total, setTotal] = useState(0);
 
   return (
-    <div className='grid grid-cols-3 w-fit'>
-      {
-        total.map((i, index) => (
-          <ResumenTotal key={index} titulo={i.titulo} valor={i.dato}/>
-        ))
-      }
+    <div className='grid mq:w-full '>
+      <ResumenTotal valor={porcentaje}/>
     </div>  
   )
 }
