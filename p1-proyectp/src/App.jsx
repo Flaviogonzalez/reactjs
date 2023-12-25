@@ -9,13 +9,13 @@ function App() {
   
   return (
     <>
-      <div className='w-screen flex flex-row overflow-x-hidden overflow-y-hidden'>
-
+      <div>
         <Sidebar activarModal={activarSidebar}></Sidebar>
+        <Topbar setActivarSidebar={setActivarSidebar} activarSidebar={activarSidebar}/>
 
-        <div className='w-full'>
-          <Topbar setActivarSidebar={setActivarSidebar} activarSidebar={activarSidebar}/>
+        <div className='my-16 grid '>
           <Resumen/>
+
         </div>
       </div>
     </>
