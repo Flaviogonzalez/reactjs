@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ResumenTotal from './Resumen/ResumenTotal'
-import ResumenAcciones from './Resumen/ResumenAcciones'
+import ResumenInvertido from './Resumen/ResumenInvertido'
+import Grid from '@mui/material/Grid';
 
 const Resumen = () => {
   const [porcentaje, setPorcentaje] = useState(0);
@@ -17,9 +18,16 @@ const Resumen = () => {
   }, [])
 
   return (
-    <div className=''>
-      <ResumenTotal porcentaje={porcentaje} retorno={retorno} invertido={invertido} total={total}/>
-      <ResumenAcciones></ResumenAcciones>
+    <div>
+      <Grid container spacing={0}>
+        <Grid item xs md>
+          <ResumenTotal porcentaje={porcentaje} retorno={retorno} invertido={invertido} total={total}/>
+        </Grid>
+        <Grid item xs md>
+          <ResumenInvertido/>
+        </Grid>
+      </Grid>
+
       
     </div>  
   )
