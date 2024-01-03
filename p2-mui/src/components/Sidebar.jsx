@@ -22,23 +22,23 @@ const Sidebar = ({sidebar, setSidebar}) => {
     const SidebarOptions = [
         {
             nombre: 'Resumen',
-            icon: <HomeIcon fontSize='large' color='primary'/>,
+            icon: <HomeIcon fontSize='medium' color='primary'/>,
         },
         {
             nombre: 'Calendario',
-            icon: <CalendarMonthIcon fontSize='large' color='primary'/>,
+            icon: <CalendarMonthIcon fontSize='medium' color='primary'/>,
         },
         {
             nombre: 'Cotizaciones',
-            icon: <WaterfallChartIcon fontSize='large' color='primary'/>,
+            icon: <WaterfallChartIcon fontSize='medium' color='primary'/>,
         },
         {
             nombre: 'Balances',
-            icon: <AccountBalanceIcon fontSize='large' color='primary'/>,
+            icon: <AccountBalanceIcon fontSize='medium' color='primary'/>,
         },
         {
             nombre: 'Dolar',
-            icon: <AttachMoneyIcon fontSize='large' color='primary'/>,
+            icon: <AttachMoneyIcon fontSize='medium' color='primary'/>,
         },
     ]
 
@@ -53,14 +53,14 @@ const Sidebar = ({sidebar, setSidebar}) => {
   return (
     <div>
         <Drawer color='primary' size='sm' open={sidebar} onClose={toggleDrawer(false)}>
-            <Box role="presentation" sx={{display: 'flex', flexDirection: 'column', p: 2, height: '100%', gap: 2}} onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+            <Box role="presentation" sx={{display: 'flex', flexDirection: 'column', height: '100%'}} onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
                 <ModalClose/>
-                <DialogTitle>FinanceApp</DialogTitle>
+                <DialogTitle sx={{p: 3}}>FinanceApp</DialogTitle>
                 <Divider/>
                 <List>
                 {SidebarOptions.map((i) => (
                     <ListItem>
-                        <ListItemButton sx={{p: 2, borderRadius: 'md'}}>
+                        <ListItemButton sx={{p: 1}}>
                             {i.icon}
                             {i.nombre}
                         </ListItemButton>

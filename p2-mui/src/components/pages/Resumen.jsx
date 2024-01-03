@@ -1,23 +1,28 @@
 import React from 'react'
+import { tickers } from '../../data/TickerBCRA'
 import * as mui from '@mui/material'
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/joy/Typography'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import Container from '@mui/material/Container'
+import Card from '@mui/joy/Card';
 
 
 
 const Resumen = () => {
   return (
     <div>
-        <Container maxWidth="false" sx={{bgcolor: '#3d3d3d',paddingTop: 10}}>
-            <Container maxWidth="xl" sx={{bgcolor: '#5d5d5d'}}>
-                <Typography sx={{fontWeight: 'bold'}} variant="h1" color="inherit">Flaco, Calmate un poco</Typography>
-            </Container>
-        </Container>
-
+      <Container maxWidth={false} sx={{display: 'grid',paddingTop: 3 ,gap: 3 ,gridTemplateColumns: 'repeat(5, 1fr)' , bgcolor: '#3d3d3d', width: '100%', height: '100%'}}>
+        {tickers.map((t) => (
+          <Card key={t.id} sx={{width: 200, height: 150, p: 2,}}>
+            <Typography level='title-lg' >{t.ticker}</Typography>
+            <Typography level='body-sm' >{t.nombre}</Typography>
+            <Typography level='h2' >${t.precio}</Typography>
+          </Card>
+        ))}
+      </Container>
     </div>
   )
 }

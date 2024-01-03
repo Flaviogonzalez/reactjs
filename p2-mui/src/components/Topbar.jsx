@@ -7,6 +7,9 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Menu } from '@mui/icons-material'
+import { Autocomplete } from '@mui/joy'
+import { tickers } from '../data/TickerBCRA'
+import { TextField } from '@mui/material'
 
 
 const Topbar = ({sidebar, setSidebar}) => {
@@ -35,6 +38,8 @@ const Topbar = ({sidebar, setSidebar}) => {
                 <Typography variant="h5">
                     FinanceApp
                 </Typography>
+
+              <Autocomplete freeSolo placeholder='Tickers' sx={{width: 300, ml: 4}} options={tickers} getOptionLabel={(option) => option.ticker} getOptionKey={(option) => option.id}/>
             </Toolbar>
         </AppBar>
     </div>
