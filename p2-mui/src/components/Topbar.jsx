@@ -39,7 +39,12 @@ const Topbar = ({sidebar, setSidebar}) => {
                     FinanceApp
                 </Typography>
 
-              <Autocomplete freeSolo placeholder='Tickers' sx={{width: 300, ml: 4}} options={tickers} getOptionLabel={(option) => option.ticker} getOptionKey={(option) => option.id}/>
+              <Autocomplete freeSolo placeholder='Tickers' sx={{
+                width: 300, 
+                ml: 4, 
+                bgcolor: '#101418', 
+                borderColor: '#1f262e',
+                }} options={tickers} getOptionLabel={(option) => option.ticker} getOptionKey={(option) => option.id}/>
             </Toolbar>
         </AppBar>
     </div>

@@ -57,5 +57,5 @@
   
 export const tickers = ticker.map(ticker => ({
     ...ticker,
-    precio: (Math.random() * (1000 - 1) + 1).toFixed(2) // Genera un precio aleatorio entre 1 y 1000
+    precio: (Math.random() * (15000 - 1) + 1).toFixed(2) // Genera un precio aleatorio entre 1 y 1000
   }));

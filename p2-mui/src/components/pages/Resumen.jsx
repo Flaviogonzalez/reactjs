@@ -11,15 +11,20 @@ import Card from '@mui/joy/Card';
 
 
 
+
 const Resumen = () => {
   return (
     <div>
-      <Container maxWidth={false} sx={{display: 'grid',paddingTop: 3 ,gap: 3 ,gridTemplateColumns: 'repeat(5, 1fr)' , bgcolor: '#3d3d3d', width: '100%', height: '100%'}}>
+      <Container maxWidth="md">
+        hola
+      </Container>
+
+      <Container maxWidth={false} sx={{display: 'grid',paddingTop: 3 ,gap: 3 ,gridTemplateColumns: 'repeat(5, 1fr)' , bgcolor: '#101418', width: '100%', height: '100%'}}>
         {tickers.map((t) => (
-          <Card key={t.id} sx={{width: 200, height: 150, p: 2,}}>
-            <Typography level='title-lg' >{t.ticker}</Typography>
-            <Typography level='body-sm' >{t.nombre}</Typography>
-            <Typography level='h2' >${t.precio}</Typography>
+          <Card variant='outlined' key={t.id} sx={{bgcolor: '#101418', p: 2,}}>
+            <Typography color='primary' level='title-lg' >{t.ticker}</Typography>
+            <Typography color='warning' level='body-sm' >{t.nombre}</Typography>
+            <Typography color='#000000' textColor={'common.white'} level='h2' >${t.precio}</Typography>
           </Card>
         ))}
       </Container>
