@@ -52,7 +52,7 @@ const Sidebar = ({sidebar, setSidebar}) => {
   
   return (
     <div>
-        <Drawer color='primary' size='sm' open={sidebar} onClose={toggleDrawer(false)}>
+        <Drawer color='primary' variant='plain' size='sm' open={sidebar} onClose={toggleDrawer(false)}>
             <Box role="presentation" sx={{display: 'flex', flexDirection: 'column', height: '100%'}} onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
                 <ModalClose/>
                 <DialogTitle sx={{p: 3}}>FinanceApp</DialogTitle>
