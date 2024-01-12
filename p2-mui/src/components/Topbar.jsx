@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Menu } from '@mui/icons-material'
 import { Autocomplete, AutocompleteOption, ListItemDecorator, ListItemContent } from '@mui/joy'
+import AutocompleteListbox from '@mui/joy/AutocompleteListbox';
 import { tickers } from '../data/TickerBCRA'
 import { TextField } from '@mui/material'
 
@@ -41,10 +42,6 @@ const Topbar = ({sidebar, setSidebar}) => {
                 </Typography>
 
               <Autocomplete freeSolo placeholder='Buscar Tickers...' sx={{
-                p: 0,
-                'MuiAutocomplete-listbox-scroll': {
-                  backgroundColor: '#FFF'
-                },
                 width: 300, 
                 ml: 4, 
                 bgcolor: '#101418', 

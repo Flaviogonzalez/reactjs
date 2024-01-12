@@ -56,6 +56,36 @@
   ]
   
 export const tickers = ticker.map(ticker => ({
-    ...ticker,
-    precio: (Math.random() * (15000 - 1) + 1).toFixed(2) // Genera un precio aleatorio entre 1 y 1000
-  }));
+  ...ticker,
+  precio: (Math.random() * (15000 - 1) + 1).toFixed(2) // Genera un precio aleatorio entre 1 y 1000
+}));
+
+const cantidadAccionesTotales = tickers.length; // Total de acciones disponibles
+const accionesSeleccionadas = Math.floor(Math.random() * cantidadAccionesTotales) + 1; // Número aleatorio de acciones seleccionadas
+
+const tickersSeleccionados = [];
+
+while (tickersSeleccionados.length < accionesSeleccionadas) {
+  const indiceAleatorio = Math.floor(Math.random() * cantidadAccionesTotales);
+  if (!tickersSeleccionados.includes(indiceAleatorio)) {
+    tickersSeleccionados.push(indiceAleatorio);
+  }
+}
+
+export const comprasDeAcciones = tickersSeleccionados.map(indice => {
+  const ticker = tickers[indice];
+  const cantidadAcciones = (Math.floor(Math.random() * 100) + 1).toFixed(0); // Cantidad aleatoria entre 1 y 100
+  const precioCompra = (Math.random() * (1000 - 1) + 1).toFixed(2); // Precio de compra aleatorio entre 1 y 100
+  const fechaCompra = new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000)
+    .toLocaleDateString('es-AR');
+
+  return {
+    ticker: ticker.ticker,
+    fechaCompra,
+    precioCompra,
+    cantidadAcciones,
+    precioFinal: (precioCompra * cantidadAcciones).toFixed(2)
+  };
+});
+
+  
