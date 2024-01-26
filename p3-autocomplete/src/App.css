@@ -1,0 +1,69 @@
+::-webkit-scrollbar {
+    display: none;
+    background-color: transparent;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 20px;
+
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    min-width: 300px;
+    height: 15px;
+    border-radius: 18px;
+    padding: 10px 15px;
+
+
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.autocomplete__list {
+    z-index: 9999;
+    position: absolute;
+    overflow-y: scroll;
+
+    border: solid 1px #ccc;
+    border-radius: 18px;
+
+    background-color: transparent;
+
+    margin-top: 20px;
+
+    max-height: 200px;
+    width: 100%;
+}
+
+.autocomplete__item {
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    padding: 10px 15px;
+
+    &:hover {
+        background-color: #78716C;
+    }
+
+    &:first-child{
+        border-radius: 15px 15px 0 0;
+    }
+
+    &:last-child{
+        border-radius: 0px 0px 15px 15px;
+    }
+
+    &:only-child{
+        border-radius: 15px;
+    }
+}
+
+.autocomplete {
+    position: relative;
+}
