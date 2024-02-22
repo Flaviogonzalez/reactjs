@@ -26,7 +26,7 @@ const iconos = {
     suscripciones: iconoSuscripciones,
   };
 
-const Gasto = ({gasto, setGastoEditar}) => {
+const Gasto = ({gasto, setGastoEditar, eliminarGasto}) => {
   const leadingActions = () => (
     <LeadingActions>
         <SwipeAction onClick={() => setGastoEditar(gasto)}>
@@ -37,7 +37,7 @@ const Gasto = ({gasto, setGastoEditar}) => {
 
 const trailingActions = () => (
     <TrailingActions>
-        <SwipeAction onClick={() => console.log('flaco no rompas las pelotas')}>
+        <SwipeAction onClick={() => eliminarGasto(gasto.id)} destructive={true}>
             Eliminar
         </SwipeAction>
     </TrailingActions>
